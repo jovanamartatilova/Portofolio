@@ -9,21 +9,48 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-const SKILLS: Record<string, string[]> = {
-  "Tools & Platforms": ["Git", "GitHub", "Figma", "Tableau", "Microsoft Office", "MySQL"],
-  "Languages": ["Java", "Python", "PHP", "JavaScript", "SQL", "Dart", "TypeScript"],
-  "Frameworks & Libraries": ["Laravel", "React JS", "Next.js", "Flutter", "Tailwind CSS"],
-  "Analytical": ["Data Analysis", "Business Process Analysis", "System Analysis & Design", "Data Visualization"],
+const SKILLS: Record<string, { name: string; icon?: string; img?: string }[]> = {
+  "Tools & Platforms": [
+  { name: "Git", icon: "devicon-git-plain colored" },
+  { name: "GitHub", icon: "devicon-github-original" },
+  { name: "Figma", icon: "devicon-figma-plain colored" },
+  { name: "Tableau", img: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tableau.svg" },
+  { name: "Microsoft Office", icon: "devicon-microsoftsqlserver-plain colored" },
+  { name: "MySQL", icon: "devicon-mysql-plain colored" },
+],
+  "Languages": [
+    { name: "Java", icon: "devicon-java-plain colored" },
+    { name: "Python", icon: "devicon-python-plain colored" },
+    { name: "PHP", icon: "devicon-php-plain colored" },
+    { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+    { name: "SQL", icon: "devicon-azuresqldatabase-plain colored" },
+    { name: "Dart", icon: "devicon-dart-plain colored" },
+    { name: "TypeScript", icon: "devicon-typescript-plain colored" },
+  ],
+  "Frameworks & Libraries": [
+    { name: "Laravel", icon: "devicon-laravel-plain colored" },
+    { name: "React JS", icon: "devicon-react-original colored" },
+    { name: "Next.js", icon: "devicon-nextjs-plain" },
+    { name: "Flutter", icon: "devicon-flutter-plain colored" },
+    { name: "Tailwind CSS", icon: "devicon-tailwindcss-plain colored" },
+  ],
+  "Analytical": [
+    { name: "Data Analysis", icon: "devicon-numpy-plain colored" },
+    { name: "Business Process Analysis", icon: "devicon-trello-plain colored" },
+    { name: "System Analysis & Design", icon: "devicon-figma-plain colored" },
+    { name: "Data Visualization", img: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tableau.svg" },
+  ],
 };
 
 const PROJECTS = [
   {
     title: "Internship Portal System (EarlyPath)",
     type: "Fullstack Web App",
-    description: "AI-powered multi-tenant SaaS Internship Management System with REST APIs, tenant isolation, CV screening automation, dynamic certificate generation with FabricJS, and role-based authorization — built at PT. Otak Kanan.",
+    description: "AI-powered multi-tenant SaaS Internship Management System with REST APIs, multi-tenant architecture, CV screening automation, dynamic certificate generation with FabricJS, and role-based authorization — built at PT. Otak Kanan.",
     stack: ["Laravel", "ReactJS", "TailwindCSS", "MySQL", "OpenAI API"],
     year: "2026",
-    link: "https://github.com/jovanamartatilova",
+    link: "https://earlypath.chrisant.works/",
+    images: ["/EarlyPath(2).png", "/EarlyPath(1).png", "/EarlyPath.png"],
   },
   {
     title: "BookTrack",
@@ -31,7 +58,8 @@ const PROJECTS = [
     description: "Responsive book library app with Open Library API integration, search, favorites with localStorage, dark mode, and fully responsive layout — built as a pre-project assessment for internship.",
     stack: ["React.js", "Tailwind CSS", "REST API"],
     year: "2026",
-    link: "https://github.com/jovanamartatilova",
+    link: "https://book-track-lovat.vercel.app/",
+    images: ["/BookTrack (1).png", "/BookTrack (2).png", "/BookTrack.png"],
   },
   {
     title: "AgriConnect",
@@ -40,6 +68,7 @@ const PROJECTS = [
     stack: ["Figma", "Design Thinking", "Co-Design", "Usability Testing"],
     year: "2025",
     link: "https://bit.ly/prototipewebsite",
+    images: ["/AgriConnect.jpeg", "/AgriConnect(1).jpeg"],
   },
   {
     title: "JaringJurnal AISINDO",
@@ -48,6 +77,7 @@ const PROJECTS = [
     stack: ["Laravel", "PHP", "MySQL", "System Analysis"],
     year: "2025",
     link: "https://github.com/AgileSoftDev-2025/JaringJurnalAisindo",
+    images: ["/Jarjun AISINDO.jpeg"],
   },
   {
     title: "Puskesmas Girimulyo — Redesign",
@@ -56,6 +86,7 @@ const PROJECTS = [
     stack: ["Figma", "User Research", "Prototyping"],
     year: "2025",
     link: "https://bit.ly/prototiperedesign",
+    images: ["/Girimulyo.jpeg"],
   },
   {
     title: "Retail Sales Dashboard",
@@ -63,6 +94,8 @@ const PROJECTS = [
     description: "Interactive Tableau dashboard for retail analytics with KPI tracking (sales, profit, orders), monthly trends, product category & age group analysis, and dynamic filters for data-driven decision making.",
     stack: ["Tableau", "Data Analysis"],
     year: "2025",
+    link: "https://public.tableau.com/app/profile/jovana.martatilova1445/viz/avdpuas_revisi2_17660985641910/General-Sales1",
+    images: ["/Tableau.png"],
   },
   {
     title: "LibraReads Mobile",
@@ -71,6 +104,7 @@ const PROJECTS = [
     stack: ["Flutter", "Dart", "PHP", "MySQL", "REST API"],
     year: "2025",
     link: "https://github.com/jovanamartatilova/librareads_mobile",
+    images: ["/LRMob.jpeg"],
   },
   {
     title: "LibraReads Web",
@@ -79,6 +113,7 @@ const PROJECTS = [
     stack: ["Laravel", "PHP", "MySQL", "HTML", "CSS", "JavaScript"],
     year: "2025",
     link: "https://github.com/jovanamartatilova",
+    images: ["/LRWeb.jpeg"],
   },
   {
     title: "MorBot",
@@ -87,6 +122,7 @@ const PROJECTS = [
     stack: ["AI / NLP", "Chatbot", "Research"],
     year: "2024",
     badge: "2nd Place — FST PKM Cup",
+    images: ["/Mock Up LibraReads.png"],
   },
   {
     title: "Meowly Smartcat",
@@ -94,8 +130,9 @@ const PROJECTS = [
     description: "AI-powered cat breed classifier using computer vision. Contributor on a Python + Next.js stack.",
     stack: ["Python", "Next.js", "AI"],
     year: "2024",
-    link: "https://github.com/jovanamartatilova",
+    link: "https://github.com/anindyawita/Meowly-Smartcat-Service-Platform/",
     badge: "Contributor",
+    images: ["/MockUp Meowly.png"],
   },
   {
     title: "Dradahblumbang Village Profile",
@@ -103,8 +140,9 @@ const PROJECTS = [
     description: "Village profile website for Dradahblumbang, built with TypeScript. Contributed to frontend development.",
     stack: ["TypeScript"],
     year: "2024",
-    link: "https://github.com/jovanamartatilova",
+    link: "https://dradahblumbang.vercel.app/",
     badge: "Contributor",
+    images: ["/Dradah.png"],
   },
 ];
 
@@ -202,26 +240,70 @@ const AWARDS = [
   },
 ];
 
+function ProjectCard({ p }: { p: typeof PROJECTS[number] }) {
+  const [imgIndex, setImgIndex] = useState(0);
+  const images = p.images || [];
+
+  return (
+    <div className="project-card">
+      {images.length > 0 && (
+<div style={{ position:"relative", height:160, borderRadius:"16px 16px 0 0", overflow:"hidden", margin:"-28px -28px 20px -28px", width:"calc(100% + 56px)", background:"#F5F0E8" }}>
+  <img src={images[imgIndex]} alt={p.title} style={{ width:"100%", height:"100%", objectFit:"contain" }} />
+          {images.length > 1 && (
+            <>
+              <button onClick={() => setImgIndex((imgIndex - 1 + images.length) % images.length)}
+                style={{ position:"absolute", left:8, top:"50%", transform:"translateY(-50%)", width:28, height:28, borderRadius:"50%", border:"none", background:"rgba(0,0,0,0.5)", color:"#fff", cursor:"pointer" }}>‹</button>
+              <button onClick={() => setImgIndex((imgIndex + 1) % images.length)}
+                style={{ position:"absolute", right:8, top:"50%", transform:"translateY(-50%)", width:28, height:28, borderRadius:"50%", border:"none", background:"rgba(0,0,0,0.5)", color:"#fff", cursor:"pointer" }}>›</button>
+              <div style={{ position:"absolute", bottom:8, left:"50%", transform:"translateX(-50%)", display:"flex", gap:5 }}>
+                {images.map((_, i) => (
+                  <span key={i} style={{ width:6, height:6, borderRadius:"50%", background: i === imgIndex ? "#fff" : "rgba(255,255,255,0.4)" }} />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+      <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:16 }}>
+        <div>
+          <p style={{ fontSize:11,letterSpacing:"0.1em",textTransform:"uppercase",color:"var(--ink-faint)",marginBottom:4 }}>{p.type}</p>
+          <h3 className="serif" style={{ fontSize:22,fontWeight:400,color:"var(--ink)" }}>{p.title}</h3>
+        </div>
+        <span style={{ fontSize:13,color:"var(--ink-faint)" }}>{p.year}</span>
+      </div>
+      {p.badge && (
+        <div style={{ display:"inline-block",padding:"4px 10px",background:"var(--accent-light)",color:"var(--accent)",borderRadius:100,fontSize:12,fontWeight:500,marginBottom:12 }}>{p.badge}</div>
+      )}
+      <p style={{ fontSize:14,color:"var(--ink-muted)",lineHeight:1.65,marginBottom:20 }}>{p.description}</p>
+      <div style={{ display:"flex",flexWrap:"wrap",gap:6 }}>
+        {p.stack.map(t => <span key={t} className="tag">{t}</span>)}
+      </div>
+      {p.link && (
+  <div style={{ marginTop:16 }}>
+    <a href={p.link} target="_blank" rel="noopener noreferrer" style={{ fontSize:13,color:"var(--ink)",textDecoration:"none" }}>
+      {p.title.includes("Retail Sales Dashboard") ? "Visit Tableau Public →"
+        : ["BookTrack","Internship Portal System (EarlyPath)","Dradahblumbang"].some(t => p.title.includes(t)) ? "Visit website →"
+        : "Visit More.. →"}
+    </a>
+  </div>
+)}
+    </div>
+  );
+}
+
 export default function Home() {
   const [, setMenuOpen] = useState(false);
 
   return (
     <>
       {/* NAV */}
-      <nav style={{ position:"fixed",top:16,left:"50%",transform:"translateX(-50%)",zIndex:100,width:"calc(100% - 48px)",maxWidth:1060,background:"rgba(255,255,255,0.55)",backdropFilter:"blur(20px) saturate(180%)",WebkitBackdropFilter:"blur(20px) saturate(180%)",border:"1px solid rgba(255,255,255,0.7)",borderRadius:100,boxShadow:"0 4px 24px rgba(26,23,20,0.08)" }}>
-        <div style={{ padding:"0 24px",height:52,display:"flex",alignItems:"center",justifyContent:"space-between" }}>
-          <a href="#" className="serif" style={{ fontSize:18,color:"var(--ink)",textDecoration:"none" }}>Portofolio</a>
-          <div style={{ display:"flex",gap:28,alignItems:"center" }}>
-            {NAV_LINKS.map(l => <a key={l.label} href={l.href} className="nav-link">{l.label}</a>)}
-          </div>
-          <a href="mailto:jovanamartatilova@gmail.com" style={{ fontSize:13,padding:"8px 18px",border:"1px solid #D4CFC8",borderRadius:100,color:"var(--ink)",textDecoration:"none",letterSpacing:"0.04em",transition:"background 0.2s,border-color 0.2s" }}
-            onMouseEnter={e=>{(e.target as HTMLAnchorElement).style.background="var(--cream-dark)";(e.target as HTMLAnchorElement).style.borderColor="var(--ink)"}}
-            onMouseLeave={e=>{(e.target as HTMLAnchorElement).style.background="transparent";(e.target as HTMLAnchorElement).style.borderColor="#D4CFC8"}}
-          >
-            Hire me
-          </a>
-        </div>
-      </nav>
+     <nav style={{ position:"fixed",top:16,left:"50%",transform:"translateX(-50%)",zIndex:100,width:"calc(100% - 48px)",maxWidth:1100,background:"rgba(255,255,255,0.55)",backdropFilter:"blur(20px) saturate(180%)",WebkitBackdropFilter:"blur(20px) saturate(180%)",border:"1px solid rgba(255,255,255,0.7)",borderRadius:100,boxShadow:"0 4px 24px rgba(26,23,20,0.08)" }}>
+  <div style={{ padding:"0 24px",height:52,display:"flex",alignItems:"center",justifyContent:"center" }}>
+    <div style={{ display:"flex",gap:56,alignItems:"center" }}>
+      {NAV_LINKS.map(l => <a key={l.label} href={l.href} className="nav-link">{l.label}</a>)}
+    </div>
+  </div>
+</nav>
 
       {/* ═══════════════ HERO ═══════════════ */}
       <section id="about" className="hero-section" style={{ minHeight:"100vh",display:"flex",alignItems:"center",padding:"0 24px",background:"linear-gradient(160deg, #EDE0CC 0%, #F5F0E8 45%, #F5F0E8 100%)" }}>
@@ -233,10 +315,10 @@ export default function Home() {
                 Information Systems · Universitas Airlangga · Surabaya
               </p>
               <h1 className="serif animate-fade-up delay-100" style={{ fontSize:"clamp(48px,6.5vw,82px)",lineHeight:1.06,fontWeight:400,color:"var(--ink)",marginBottom:28 }}>
-                Jovana<br />Martatilova.
+                Jovana<br />Martatilova
               </h1>
               <p className="animate-fade-up delay-200" style={{ fontSize:"clamp(15px,1.8vw,18px)",color:"var(--ink-muted)",lineHeight:1.75,maxWidth:520,marginBottom:40 }}>
-                Information Systems student with interests in full stack development and data analytics. Experienced in building web applications, working with data, and continuously learning new technologies to solve real-world problems.
+                Information Systems student with interests in Data Analytics and Business Intelligence. Experienced in data analysis, dashboard development, and machine learning projects, with additional background in UI/UX and web development. Passionate about building data-driven digital solutions.
               </p>
               <div className="animate-fade-up delay-300" style={{ display:"flex",gap:12,flexWrap:"wrap",marginBottom:64 }}>
                 <a href="#projects" className="btn-primary">View Projects <span aria-hidden="true">↓</span></a>
@@ -255,7 +337,7 @@ export default function Home() {
             </div>
 
             {/* ── KANAN — FOTO ── */}
-            <div className="animate-fade-up delay-500" style={{ flexShrink:0 }}>
+            <div className="animate-fade-up delay-500" style={{ flexShrink:0, position:"relative" }}>
               <div className="photo-wrapper">
                 <div className="photo-frame-deco" />
                 <div className="photo-container">
@@ -271,6 +353,8 @@ export default function Home() {
         </div>
       </section>
 
+
+
       {/* SKILLS */}
       <section id="skills" style={{ background:"var(--ink)",padding:"80px 24px" }}>
         <div style={{ maxWidth:1100,margin:"0 auto" }}>
@@ -281,40 +365,38 @@ export default function Home() {
             </div>
           </div>
           <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(240px,1fr))",gap:1,border:"1px solid rgba(245,240,232,0.08)",borderRadius:20,overflow:"hidden" }}>
-            {Object.entries(SKILLS).map(([group, items], gi) => (
-              <div key={group} style={{
-                padding:"32px 28px",
-                background: gi % 2 === 0 ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.02)",
-                position:"relative",
-                overflow:"hidden",
-                borderRight:"1px solid rgba(245,240,232,0.08)",
-                transition:"background 0.2s",
-              }}
-                onMouseEnter={e=>(e.currentTarget.style.background="rgba(200,85,61,0.12)")}
-                onMouseLeave={e=>(e.currentTarget.style.background= gi % 2 === 0 ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.02)")}
-              >
-                <p style={{ fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--accent)",marginBottom:16,fontWeight:500 }}>{group}</p>
-                <div style={{ display:"flex",flexWrap:"wrap",gap:8 }}>
-                  {items.map(s => (
-                    <span key={s} style={{
-                      display:"inline-block",
-                      padding:"5px 14px",
-                      border:"1px solid rgba(245,240,232,0.15)",
-                      borderRadius:100,
-                      fontSize:12,
-                      color:"rgba(245,240,232,0.7)",
-                      background:"transparent",
-                      transition:"background 0.15s,border-color 0.15s,color 0.15s",
-                      cursor:"default",
-                    }}
-                      onMouseEnter={e=>{const el=e.currentTarget;el.style.background="rgba(245,240,232,0.12)";el.style.color="var(--cream)";el.style.borderColor="rgba(245,240,232,0.4)"}}
-                      onMouseLeave={e=>{const el=e.currentTarget;el.style.background="transparent";el.style.color="rgba(245,240,232,0.7)";el.style.borderColor="rgba(245,240,232,0.15)"}}
-                    >{s}</span>
-                  ))}
-                </div>
-              </div>
-            ))}
+  {Object.entries(SKILLS).map(([group, items], gi) => (
+    <div key={group} style={{
+      padding:"32px 28px",
+      background: gi % 2 === 0 ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.02)",
+      borderRight:"1px solid rgba(245,240,232,0.08)",
+    }}>
+      <p style={{ fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--accent)",marginBottom:20,fontWeight:500 }}>{group}</p>
+      <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(64px,1fr))",gap:16 }}>
+        {items.map(s => (
+          <div key={s.name} title={s.name} style={{
+            display:"flex",flexDirection:"column",alignItems:"center",gap:8,
+            padding:"14px 8px",borderRadius:12,
+            background:"rgba(255,255,255,0.03)",
+            border:"1px solid rgba(245,240,232,0.08)",
+            transition:"transform 0.18s, background 0.18s, border-color 0.18s",
+            cursor:"default",
+          }}
+            onMouseEnter={e=>{e.currentTarget.style.transform="translateY(-4px) scale(1.04)";e.currentTarget.style.background="rgba(200,85,61,0.12)";e.currentTarget.style.borderColor="rgba(200,85,61,0.4)"}}
+            onMouseLeave={e=>{e.currentTarget.style.transform="translateY(0) scale(1)";e.currentTarget.style.background="rgba(255,255,255,0.03)";e.currentTarget.style.borderColor="rgba(245,240,232,0.08)"}}
+          >
+            {s.icon ? (
+  <i className={s.icon} style={{ fontSize:28,color:"var(--cream)" }} />
+) : (
+  <img src={s.img} alt={s.name} style={{ width:28,height:28 }} />
+)}
+            <span style={{ fontSize:10,color:"rgba(245,240,232,0.65)",textAlign:"center",lineHeight:1.3 }}>{s.name}</span>
           </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
         </div>
       </section>
 
@@ -327,30 +409,8 @@ export default function Home() {
             <a href="https://github.com/jovanamartatilova" target="_blank" rel="noopener noreferrer" style={{ fontSize:13,color:"var(--accent)",textDecoration:"none" }}>View all on GitHub →</a>
           </div>
           <div style={{ display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:20 }}>
-            {PROJECTS.map(p => (
-              <div key={p.title} className="project-card">
-                <div style={{ display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:16 }}>
-                  <div>
-                    <p style={{ fontSize:11,letterSpacing:"0.1em",textTransform:"uppercase",color:"var(--ink-faint)",marginBottom:4 }}>{p.type}</p>
-                    <h3 className="serif" style={{ fontSize:22,fontWeight:400,color:"var(--ink)" }}>{p.title}</h3>
-                  </div>
-                  <span style={{ fontSize:13,color:"var(--ink-faint)" }}>{p.year}</span>
-                </div>
-                {p.badge && (
-                  <div style={{ display:"inline-block",padding:"4px 10px",background:"var(--accent-light)",color:"var(--accent)",borderRadius:100,fontSize:12,fontWeight:500,marginBottom:12 }}>{p.badge}</div>
-                )}
-                <p style={{ fontSize:14,color:"var(--ink-muted)",lineHeight:1.65,marginBottom:20 }}>{p.description}</p>
-                <div style={{ display:"flex",flexWrap:"wrap",gap:6 }}>
-                  {p.stack.map(t => <span key={t} className="tag">{t}</span>)}
-                </div>
-                {p.link && (
-                  <div style={{ marginTop:16 }}>
-                    <a href={p.link} target="_blank" rel="noopener noreferrer" style={{ fontSize:13,color:"var(--ink)",textDecoration:"none" }}>View on GitHub →</a>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          {PROJECTS.map(p => <ProjectCard key={p.title} p={p} />)}
+        </div>
         </div>
       </section>
 
@@ -514,6 +574,24 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* WRITING */}
+<section style={{ padding:"64px 24px", background:"var(--cream)", borderTop:"1px solid #DDD6CA", borderBottom:"1px solid #DDD6CA" }}>
+  <div style={{ maxWidth:1100, margin:"0 auto", display:"flex", alignItems:"center", justifyContent:"space-between", flexWrap:"wrap", gap:24 }}>
+    <div>
+      <p className="section-label" style={{ marginBottom:8 }}>Writing</p>
+      <h2 className="serif" style={{ fontSize:28, fontWeight:400, color:"var(--ink)", marginBottom:8 }}>
+        I also write on Medium.
+      </h2>
+      <p style={{ fontSize:14, color:"var(--ink-muted)", maxWidth:480, lineHeight:1.6 }}>
+        Occasional thoughts on tech, data, and student life — published on Medium.
+      </p>
+    </div>
+    <a href="https://medium.com/@jovanamartatilova" target="_blank" rel="noopener noreferrer" className="btn-primary">
+      Read on Medium <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
 
       {/* CONTACT */}
       <section id="contact" style={{ padding:"80px 24px 100px",background:"var(--ink)",color:"var(--cream)" }}>
