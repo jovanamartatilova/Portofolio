@@ -59,7 +59,7 @@ const PROJECTS = [
     stack: ["React.js", "Tailwind CSS", "REST API"],
     year: "2026",
     link: "https://book-track-lovat.vercel.app/",
-    images: ["/BookTrack (1).png", "/BookTrack (2).png", "/BookTrack.png"],
+    images: ["/Booktrack (1).png", "/Booktrack (2).png", "/Booktrack.png"],
   },
   {
     title: "AgriConnect",
